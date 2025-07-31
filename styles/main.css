@@ -422,7 +422,7 @@ button[aria-label]::before {
   }
 }
 .icon--yellow-arrow::after {
-  background-image: url("../../img/svg/yellow-arrow.svg");
+  background-image: url("/img/svg/yellow-arrow.svg");
 }
 
 .header__promo {
