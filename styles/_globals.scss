@@ -1,0 +1,140 @@
+@use "helpers" as *;
+
+html {
+  background-color: var(--dark-08);
+  font-family: var(--font-family-base);
+  color: var(--grey-60);
+  font-weight: normal;
+  letter-spacing: -0.03em;
+  line-height: 1.5;
+
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
+body {
+  @include fluid-text-small(16, 14);
+
+  @include laptop-above {
+    @include fluid-text-big(18, 16);
+  }
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: var(--absolute-white);
+  font-weight: 500;
+}
+
+.h1,
+.h2,
+.h3 {
+  font-family: var(--font-family-accent);
+}
+
+// .h4,
+// .h5,
+// .h6 {
+// }
+
+.h1 {
+  @include fluid-text-small(55, 30);
+
+  line-height: 1.2;
+
+  @include laptop-above {
+    @include fluid-text-big(70, 55);
+  }
+}
+
+.h2 {
+  @include fluid-text-small(44, 28);
+
+  line-height: 1.3;
+
+  @include laptop-above {
+    @include fluid-text-big(58, 44);
+  }
+}
+
+.h3 {
+  @include fluid-text-small(30, 24);
+
+  font-weight: 600;
+
+  @include laptop-above {
+    @include fluid-text-big(40, 30);
+  }
+}
+
+.h4 {
+  @include fluid-text-small(22, 18);
+
+  font-weight: 600;
+
+  @include laptop-above {
+    @include fluid-text-big(26, 22);
+  }
+}
+
+.h5 {
+  @include fluid-text-small(20, 18);
+
+  @include laptop-above {
+    @include fluid-text-big(24, 20);
+  }
+}
+
+.h6 {
+  @include fluid-text-small(18, 16);
+
+  @include laptop-above {
+    @include fluid-text-big(20, 18);
+  }
+}
+
+a,
+button,
+input,
+optgroup,
+select,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  @include hover {
+    color: var(--yellow-55);
+  }
+}
+
+button {
+  color: inherit;
+  white-space: nowrap;
+}
+
+a[aria-label],
+button[aria-label] {
+  position: relative;
+
+  &::before {
+    @include abs-center;
+    @include square(rem(44));
+
+    position: absolute;
+    content: "";
+    z-index: 1;
+  }
+}
+
+*:focus-visible {
+  outline: rem(2) dashed var(--absolute-white);
+  outline-offset: rem(4);
+  transition-duration: 0s !important;
+}

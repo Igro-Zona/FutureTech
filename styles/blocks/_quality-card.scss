@@ -1,0 +1,33 @@
+@use "../helpers" as *;
+
+.quality-card {
+  min-height: 100%;
+  border: var(--border);
+  border-radius: fluid-big(12, 10);
+  padding: fluid-small(30, 24);
+  background-color: var(--dark-10);
+
+  @include laptop-above {
+    padding: fluid-big(40, 30);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+  }
+
+  &__info {
+    padding-top: fluid-small(16, 4);
+
+    @include laptop-above {
+      padding-top: fluid-big(20, 16);
+    }
+  }
+
+  &__score {
+  }
+}

@@ -1,0 +1,22 @@
+@use "../helpers" as *;
+
+.team {
+  display: flex;
+  width: fit-content;
+  padding: fluid-big(10, 8);
+  background-color: var(--dark-08);
+  border-radius: rem(12);
+
+  &__person {
+    --image-size: #{fluid-big(50, 40)};
+
+    width: var(--image-size);
+    border: solid rem(1) var(--dark-40);
+    border-radius: 50%;
+    background-color: var(--dark-15);
+
+    &:not(:first-child) {
+      margin-left: calc(var(--image-size) / 4 * -1);
+    }
+  }
+}

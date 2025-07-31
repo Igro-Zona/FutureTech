@@ -1,0 +1,54 @@
+@use "../helpers" as *;
+
+.tabs {
+  &__header {
+    border-bottom: var(--border);
+    overflow-x: auto;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: fluid-big(20, 14);
+    padding: fluid(50, 20) 0;
+
+    @include tablet {
+      width: max-content;
+    }
+  }
+
+  &__button {
+    @include fluid-text-big(18, 14);
+
+    border: var(--border);
+    border-radius: fluid-big(8, 7);
+    padding: fluid-small(24, 18) rem(11);
+    background-color: var(--dark-08);
+    min-width: max-content;
+
+    @include laptop-above {
+      padding: fluid-big(24, 30) rem(11);
+    }
+
+    @include hover {
+      color: var(--yellow-55);
+      border-color: var(--yellow-55);
+    }
+
+    &.is-active {
+      background-color: var(--dark-10);
+      color: var(--absolute-white);
+      font-weight: 500;
+      pointer-events: none;
+      cursor: inherit;
+    }
+  }
+
+  &__content {
+    display: none;
+
+    &.is-active {
+      display: initial;
+    }
+  }
+}

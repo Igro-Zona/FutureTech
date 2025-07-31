@@ -1,0 +1,254 @@
+@use "../helpers" as *;
+
+.hero {
+  &__body {
+    border-bottom: var(--border);
+
+    .wrapper {
+      @include tablet-above {
+        display: flex;
+      }
+
+      @include tablet {
+        padding: 0;
+      }
+    }
+  }
+
+  &__header {
+    @include tablet-above {
+      border-right: var(--border);
+      width: 59%;
+    }
+  }
+
+  &__context {
+    border-bottom: var(--border);
+    padding: fluid-small(100, 40) rem(30) fluid-small(100, 30) 0;
+
+    @include laptop-above {
+      padding-top: fluid-big(150, 100);
+    }
+
+    @include tablet {
+      padding-inline: rem(16);
+    }
+
+    &-subtitle {
+      @include fluid-text(22, 18);
+
+      color: var(--dark-40);
+      font-family: var(--font-family-accent);
+      font-weight: 500;
+      line-height: 1.2;
+
+      @include laptop-above {
+        @include fluid-text-big(30, 22);
+      }
+    }
+
+    &-title {
+      padding-top: fluid-small(20, 14);
+
+      @include laptop-above {
+        padding-top: fluid-big(30, 20);
+      }
+    }
+
+    &-info {
+      padding-top: fluid-small(14, 10);
+      color: var(--grey-50);
+
+      @include laptop-above {
+        padding-top: fluid-big(20, 14);
+      }
+
+      &--addition {
+        @include mobile-s {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__metrics {
+    @include tablet {
+      padding-inline: rem(16);
+    }
+
+    &-item {
+      padding: fluid-small(30, 20) 0;
+      text-align: left;
+
+      @include laptop-above {
+        padding: fluid-big(50, 30) 0;
+      }
+
+      &:not(:last-child) {
+        border-right: var(--border);
+        padding-right: fluid(50, 20);
+      }
+
+      &:not(:first-child) {
+        padding-left: fluid(50, 20);
+      }
+    }
+
+    &-value {
+      @include fluid-text-small(30, 24);
+
+      @include laptop-above {
+        @include fluid-text-big(40, 30);
+      }
+    }
+  }
+
+  &__preview {
+    display: flex;
+    width: 41%;
+    background: url(../../img/hero-review-background.png) 0 0 no-repeat;
+    background-size: contain;
+
+    @include tablet {
+      width: auto;
+      justify-content: center;
+    }
+
+    &-inner {
+      margin-top: auto;
+      padding: rem(100) fluid-small(50, 40) fluid-small(50, 40);
+
+      @include laptop-above {
+        padding: rem(100) 0 fluid-big(80, 50) fluid-big(80, 50);
+      }
+    }
+
+    &-team {
+      background-color: var(--dark-10);
+      border: var(--border);
+      border-radius: rem(100);
+
+      .team__person {
+        --image-size: #{fluid-small(50, 40)};
+
+        @include laptop-above {
+          --image-size: #{fluid-big(60, 50)};
+        }
+      }
+    }
+
+    &-title {
+      margin-top: fluid-big(30, 20);
+    }
+
+    &-info {
+      margin-top: fluid-small(6, 4);
+
+      @include laptop-above {
+        margin-top: fluid-big(14, 6);
+      }
+    }
+
+    &-link {
+      margin-top: fluid-big(30, 20);
+
+      @include mobile {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  &__stats {
+    border-bottom: var(--border);
+
+    &-list {
+      display: flex;
+
+      @include tablet {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &-item {
+      flex-basis: 1;
+      flex-grow: 1;
+
+      @include tablet-above {
+        &:not(:first-child) {
+          padding-left: fluid(80, 0);
+        }
+
+        &:not(:last-child) {
+          padding-right: fluid(80, 0);
+          border-right: var(--border);
+        }
+      }
+
+      @include tablet {
+        width: 100%;
+
+        &:not(:last-child) {
+          border-bottom: var(--border);
+        }
+      }
+    }
+
+    &-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: fluid(40, 30) 0;
+
+      @include laptop-above {
+        padding: fluid(50, 40) 0;
+      }
+
+      @include tablet {
+        max-width: rem(590);
+        margin: 0 auto;
+      }
+    }
+
+    &-img {
+      @include square(fluid-small(40, 30));
+
+      @include laptop-above {
+        @include square(fluid-big(50, 40));
+      }
+    }
+
+    &-title {
+      margin-top: fluid-small(20, 16);
+
+      @include laptop-above {
+        margin-top: fluid-big(30, 20);
+      }
+    }
+
+    &-frase {
+      padding-top: fluid-big(4, 2);
+      color: var(--grey-50);
+    }
+
+    &-subtitle {
+      @include fluid-text-big(20, 16);
+
+      margin-top: fluid-small(20, 10);
+      font-family: var(--font-family-accent);
+
+      @include laptop-above {
+        margin-top: fluid-big(30, 20);
+      }
+    }
+
+    &-button {
+      margin-top: fluid-small(16, 15);
+
+      @include laptop-above {
+        margin-top: fluid-big(20, 16);
+      }
+    }
+  }
+}

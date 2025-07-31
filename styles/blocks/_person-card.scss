@@ -1,0 +1,29 @@
+@use "../helpers" as *;
+
+.person-card {
+  display: flex;
+  align-items: center;
+  gap: fluid-small(10, 8);
+
+  @include laptop-above {
+    gap: fluid-big(16, 10);
+  }
+
+  &__image {
+    @include square(fluid-big(80, 60));
+
+    border-radius: rem(42);
+    background-color: var(--dark-15);
+  }
+
+  &__name {
+    @include fluid-text-big(20, 18);
+
+    color: var(--absolute-white);
+    font-weight: 600;
+  }
+
+  &__department {
+    padding-top: fluid-big(2, 0);
+  }
+}

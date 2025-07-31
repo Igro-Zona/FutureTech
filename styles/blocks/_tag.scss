@@ -1,0 +1,14 @@
+@use "../helpers" as *;
+
+.tag {
+  @include fluid-text-small(16, 14);
+
+  max-width: fit-content;
+  border-radius: rem(4);
+  padding: fluid-big(6, 4) fluid-big(10, 8);
+  background-color: var(--dark-20);
+
+  @include laptop-above {
+    @include fluid-text-big(20, 16);
+  }
+}

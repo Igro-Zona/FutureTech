@@ -1,0 +1,24 @@
+@use "../helpers" as *;
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  column-gap: fluid-big(10, 4);
+
+  &::after {
+    @include square(rem(24));
+
+    content: "";
+    flex-shrink: 0;
+    background: center no-repeat;
+    background-size: contain;
+
+    @include laptop {
+      @include square(rem(20));
+    }
+  }
+
+  &--yellow-arrow::after {
+    background-image: url("../../img/svg/yellow-arrow.svg");
+  }
+}

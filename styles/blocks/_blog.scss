@@ -1,0 +1,73 @@
+@use "../helpers" as *;
+
+.blog {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  row-gap: fluid-small(40, 30);
+  column-gap: fluid-small(40, 28);
+  padding: fluid-small(60, 40) 0;
+
+  @include laptop-above {
+    gap: fluid-big(50, 40);
+    padding: fluid-big(80, 60) 0;
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr minmax(127px, auto);
+  }
+
+  @include mobile-e {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__person-card {
+    align-self: flex-start;
+    width: fluid-small(305, 202);
+
+    @include laptop-above {
+      width: fluid-big(384, 305);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: fluid-small(24, 20);
+
+    @include laptop-above {
+      gap: fluid-big(30, 24);
+    }
+
+    @include tablet {
+      order: 1;
+      grid-column: span 2;
+    }
+
+    @include mobile-e {
+      order: 0;
+    }
+  }
+
+  &__date {
+    @include fluid-text-small(18, 16);
+
+    font-weight: 600;
+
+    @include laptop-above {
+      @include fluid-text-big(20, 18);
+    }
+  }
+
+  &__subtitle {
+    padding-top: fluid-small(6, 4);
+
+    @include laptop-above {
+      padding-top: fluid-big(10, 6);
+    }
+  }
+
+  &__link {
+    align-self: center;
+  }
+}

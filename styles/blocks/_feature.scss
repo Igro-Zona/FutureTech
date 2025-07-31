@@ -1,0 +1,23 @@
+@use "../helpers" as *;
+
+.feature .card {
+  &__context {
+    padding-block: fluid-small(122.5, 50);
+
+    @include laptop-above {
+      padding-block: fluid-big(155, 122.5);
+    }
+  }
+
+  &__body {
+    padding: fluid-small(60, 30) fluid-small(60, 16) fluid-small(60, 30) fluid-small(60, 16);
+
+    @include tablet-above {
+      padding-right: 0;
+    }
+
+    @include laptop-above {
+      padding: fluid-big(80, 60) 0 fluid-big(80, 60) fluid-big(80, 60);
+    }
+  }
+}

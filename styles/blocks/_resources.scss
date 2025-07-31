@@ -1,0 +1,31 @@
+@use "../helpers" as *;
+
+.resources {
+  & .list__item {
+    &:first-child .card__context {
+      padding-block: fluid-small(150.5, 40);
+
+      @include laptop-above {
+        padding-block: fluid-big(155.5, 150.5);
+      }
+    }
+
+    &:last-child .card__context {
+      padding-block: fluid-small(176, 40);
+
+      @include laptop-above {
+        padding-block: rem(170.5);
+      }
+    }
+  }
+
+  &.card {
+    &__subtitle {
+      @include fluid-text-small(16, 14);
+
+      @include laptop-above {
+        @include fluid-text-big(20, 16);
+      }
+    }
+  }
+}

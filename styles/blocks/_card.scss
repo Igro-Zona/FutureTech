@@ -1,0 +1,98 @@
+@use "../helpers" as *;
+
+.card {
+  @include tablet-above {
+    display: flex;
+    align-items: center;
+  }
+
+  &__context {
+    padding-right: fluid(80, 0);
+    border-bottom: var(--border);
+
+    @include tablet-above {
+      width: 37.5%;
+      border-right: var(--border);
+      border-bottom: none;
+    }
+  }
+
+  &__header {
+  }
+
+  &__image {
+    @include square(fluid-big(80, 60));
+
+    @include laptop {
+      @include square(fluid-small(60, 50));
+    }
+
+    &--lg {
+      @include rectangle(fluid-big(93, 70), fluid-big(80, 60));
+
+      @include laptop {
+        @include rectangle(fluid-small(70, 58), fluid-small(60, 50));
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: fluid(50, 20);
+  }
+
+  &__score {
+  }
+
+  &__subtitle {
+    padding-top: fluid-small(10, 6);
+
+    @include laptop-above {
+      padding-top: fluid-big(16, 10);
+    }
+  }
+
+  &__button {
+    margin-top: fluid-small(30, 24);
+    width: 100%;
+    background-color: var(--dark-10);
+    text-align: center;
+
+    @include laptop-above {
+      margin-top: fluid-big(50, 30);
+    }
+  }
+
+  &__extras {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: fluid-big(50, 30);
+    margin-top: fluid-small(40, 20);
+    border: var(--border);
+    border-radius: fluid-big(13, 8);
+    padding: fluid-big(30, 20);
+    background-color: var(--dark-10);
+
+    @include laptop-above {
+      margin-top: fluid-big(60, 40);
+    }
+
+    @include tablet {
+      padding-inline: rem(30);
+    }
+
+    &-title {
+      padding-top: fluid-big(4, 2);
+      font-weight: 600;
+    }
+  }
+
+  &__body {
+    @include tablet-above {
+      width: 62.5%;
+    }
+  }
+}

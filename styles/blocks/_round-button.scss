@@ -1,0 +1,14 @@
+@use "../helpers" as *;
+.round-button {
+  @include square(fluid-small(44, 40));
+
+  border-radius: 50%;
+
+  @include laptop-above {
+    @include square(fluid-big(52, 44));
+  }
+
+  @include hover {
+    border: solid rem(2) var(--yellow-90);
+  }
+}

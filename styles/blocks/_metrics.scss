@@ -1,0 +1,45 @@
+@use "../helpers" as *;
+
+.metrics {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    flex: 1;
+    padding: fluid(80, 20) 0;
+    text-align: center;
+
+    &:not(:last-child) {
+      border-right: var(--border);
+      padding-right: fluid(80, 20);
+    }
+
+    &:not(:first-child) {
+      padding-left: fluid(80, 20);
+    }
+  }
+
+  &__key {
+    margin-top: fluid(10, 0);
+  }
+
+  &__value {
+    @include fluid-text-small(40, 24);
+
+    color: var(--absolute-white);
+    font-family: var(--font-family-base);
+    font-weight: 600;
+
+    @include laptop-above {
+      @include fluid-text-big(60, 40);
+    }
+  }
+
+  &__sign {
+    color: var(--yellow-55);
+  }
+}

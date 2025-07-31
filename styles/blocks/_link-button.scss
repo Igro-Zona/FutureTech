@@ -1,0 +1,15 @@
+@use "../helpers" as *;
+
+.link-button {
+  @include fluid-text-big(18, 14);
+
+  border: var(--border);
+  border-radius: fluid-big(12, 8);
+  padding: fluid-big(18, 14) fluid-big(24, 20);
+  background-color: var(--dark-08);
+
+  @include hover {
+    color: var(--yellow-55);
+    border-color: var(--yellow-55);
+  }
+}

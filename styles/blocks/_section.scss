@@ -1,0 +1,44 @@
+@use "../helpers" as *;
+
+.section {
+  &__header {
+    border-bottom: var(--border);
+    padding: fluid-small(80, 40) 0;
+    background-color: var(--dark-10);
+
+    @include laptop-above {
+      padding: fluid-big(120, 80) 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(30) fluid-big(250, 200);
+
+    @include laptop {
+      column-gap: fluid-small(200, 0);
+    }
+
+    @include tablet {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &__title {
+    margin-top: fluid-big(16, 10);
+  }
+
+  &__button {
+    @include tablet {
+      text-align: center;
+      width: 100%;
+    }
+
+    & .icon {
+      width: max-content;
+    }
+  }
+}

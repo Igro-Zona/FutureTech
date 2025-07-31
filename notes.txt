@@ -1,0 +1,5 @@
+    @include hover {
+      color: var(--yellow-55);
+      background-color: var(--dark-10);
+      border-color: var(--yellow-55);
+    }

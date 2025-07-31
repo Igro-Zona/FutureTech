@@ -1,0 +1,26 @@
+@use "normalize";
+@use "fonts";
+@use "variables";
+@use "utils";
+@use "globals";
+
+@use "./blocks/icon";
+@use "./blocks/header.scss";
+@use "./blocks/metrics";
+@use "./blocks/team";
+@use "./blocks/link-button";
+@use "./blocks/round-button.scss";
+@use "./blocks/hero.scss";
+@use "./blocks/tag";
+@use "./blocks/card";
+@use "./blocks/grid";
+@use "./blocks/quality-card";
+@use "./blocks/section";
+@use "./blocks/person-card";
+@use "./blocks/actions";
+@use "./blocks/blog";
+@use "./blocks/tabs";
+@use "./blocks/feature";
+@use "./blocks/soc1als";
+@use "./blocks/resources";
+@use "./blocks/footer.scss";

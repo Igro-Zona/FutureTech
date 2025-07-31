@@ -1,0 +1,16 @@
+@use "../helpers" as *;
+
+.soc1als {
+  &__list {
+    display: flex;
+    column-gap: fluid-big(20, 14);
+  }
+
+  &__item {
+    display: flex;
+
+    @include laptop {
+      @include square(rem(20));
+    }
+  }
+}

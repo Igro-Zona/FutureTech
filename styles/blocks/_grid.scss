@@ -1,0 +1,21 @@
+@use "../helpers" as *;
+
+.grid {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: fluid-small(20, 10);
+    align-items: stretch;
+
+    @include laptop-above {
+      gap: fluid-big(30, 20);
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+  }
+}
