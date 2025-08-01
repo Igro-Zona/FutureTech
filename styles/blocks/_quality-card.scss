@@ -20,6 +20,18 @@
   &__title {
   }
 
+  &:has(.quality-card__button) {
+    .quality-card__title {
+      @include fluid-text-small(18, 16);
+
+      font-weight: 600;
+
+      @include laptop-above {
+        @include fluid-text-big(22, 18);
+      }
+    }
+  }
+
   &__info {
     padding-top: fluid-small(16, 4);
 

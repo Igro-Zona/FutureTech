@@ -14,6 +14,11 @@
 
     border-radius: rem(42);
     background-color: var(--dark-15);
+
+    &--sml {
+      @include square(fluid-big(60, 50));
+      background-color: var(--absolute-white);
+    }
   }
 
   &__name {
@@ -25,5 +30,10 @@
 
   &__department {
     padding-top: fluid-big(2, 0);
+  }
+
+  &__location {
+    padding-top: fluid-big(2, 0);
+    color: var(--dark-40);
   }
 }

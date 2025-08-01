@@ -1,6 +1,100 @@
 @use "../helpers" as *;
 
 .resources {
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: fluid-small(16, 10);
+
+    @include mobile {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    @include laptop-above {
+      gap: fluid-big(20, 16);
+    }
+  }
+
+  &__title {
+    flex-shrink: 0;
+    font-weight: 600;
+
+    @include tablet-above {
+      width: fluid-small(200, 100);
+    }
+
+    @include laptop-above {
+      width: fluid-big(242.5, 203);
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: fluid-big(30, 16) fluid-big(20, 16);
+    margin-top: fluid-big(30, 24);
+  }
+
+  &__image {
+    grid-column: span 2;
+    border-radius: fluid-big(12, 10);
+    overflow: hidden;
+    height: fluid-small(275, 169);
+
+    @include laptop-above {
+      height: fluid-big(332, 275);
+    }
+
+    @include mobile {
+      margin-bottom: rem(8);
+    }
+  }
+
+  &__thumb {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__cell {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: var(--border);
+    border-radius: fluid-big(13, 8);
+    padding: fluid-small(24, 20);
+    background-color: var(--dark-10);
+
+    &:nth-child(2) {
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(3) {
+      flex: 1;
+
+      @include mobile-e {
+        flex-direction: column;
+        align-items: start;
+        gap: rem(12);
+      }
+    }
+
+    &:last-child {
+      width: 100%;
+
+      .resources__cell-subtitle {
+        font-weight: 500;
+      }
+    }
+
+    &-subtitle {
+      padding-top: fluid-big(4, 2);
+      font-weight: 600;
+    }
+  }
+
   & .list__item {
     &:first-child .card__context {
       padding-block: fluid-small(150.5, 40);
@@ -19,12 +113,24 @@
     }
   }
 
-  &.card {
+  & .card {
     &__subtitle {
       @include fluid-text-small(16, 14);
 
       @include laptop-above {
         @include fluid-text-big(20, 16);
+      }
+    }
+
+    &__body {
+      padding: fluid-small(60, 40) fluid-small(60, 0) fluid-small(60, 40) fluid-small(60, 0);
+
+      @include tablet-above {
+        padding-right: 0;
+      }
+
+      @include laptop-above {
+        padding: fluid-big(80, 60) 0 fluid-big(80, 60) fluid-big(80, 60);
       }
     }
   }

@@ -1,0 +1,17 @@
+@use "../helpers" as *;
+
+.score {
+  height: fluid-big(44, 36);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: fluid-big(7, 4);
+  border: var(--border);
+  border-radius: rem(100);
+  background-color: var(--dark-08);
+  padding-inline: fluid-big(16, 12);
+
+  &__star {
+    @include square(fluid-big(24, 20));
+  }
+}

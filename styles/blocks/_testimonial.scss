@@ -1,0 +1,40 @@
+@use "../helpers" as *;
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: fluid-big(61, 49);
+  padding-block: fluid-small(60, 40);
+  letter-spacing: 0;
+
+  @include laptop-above {
+    padding-block: fluid-big(80, 60);
+  }
+
+  & .person-card__name {
+    font-weight: 500;
+  }
+
+  &__review {
+    position: relative;
+    min-height: fluid(190, 113);
+    border: var(--border);
+    border-radius: fluid-small(12, 10);
+    padding: fluid-small(40, 30) fluid-small(24, 20) fluid-small(24, 20);
+    background-color: var(--dark-10);
+    color: var(--absolute-white);
+    text-align: center;
+
+    @include laptop-above {
+      padding: fluid-big(50, 40) fluid-big(30, 24) fluid-big(30, 24);
+    }
+
+    &-score {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      translate: -50% -50%;
+    }
+  }
+}

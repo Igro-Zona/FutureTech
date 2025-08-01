@@ -1,0 +1,73 @@
+@use "../helpers" as *;
+
+.cta {
+  border-bottom: var(--border);
+  padding-block: fluid-small(80, 40);
+  background-color: var(--dark-10);
+
+  @include laptop-above {
+    padding-block: fluid-big(120, 80);
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "image tag" "title title" "subtitle subtitle";
+    align-items: center;
+    column-gap: rem(20);
+
+    @include mobile-above {
+      grid-template-areas: "image tag" "image title" "image subtitle";
+      column-gap: fluid-big(80, 60);
+    }
+  }
+
+  &__image {
+    @include square(fluid-small(120, 60));
+
+    grid-area: image;
+
+    @include laptop-above {
+      @include square(fluid-big(150, 120));
+    }
+  }
+
+  &__tag {
+    grid-area: tag;
+  }
+
+  &__title {
+    grid-area: title;
+    margin-top: rem(20);
+
+    @include mobile-above {
+      margin-top: fluid-big(16, 10);
+    }
+  }
+
+  &__subtitle {
+    grid-area: subtitle;
+    margin-top: rem(4);
+    color: var(--grey-50);
+
+    @include mobile-above {
+      margin-top: fluid-big(30, 20);
+    }
+  }
+
+  &__body {
+    margin-top: fluid-small(50, 40);
+
+    @include laptop-above {
+      margin-top: fluid-big(100, 50);
+    }
+  }
+
+  &__grid {
+    gap: fluid-big(20, 10);
+    border: var(--border);
+    border-radius: fluid-big(12, 10);
+    padding: fluid-big(20, 10);
+    background-color: var(--dark-08);
+  }
+}

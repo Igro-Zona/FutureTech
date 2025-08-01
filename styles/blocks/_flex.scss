@@ -1,0 +1,57 @@
+@use "../helpers" as *;
+
+.flex {
+  @include tablet-above {
+    display: flex;
+  }
+
+  &__tile {
+    @include tablet-above {
+      flex: 1;
+    }
+
+    &:not(:last-child) {
+      @include tablet-above {
+        border-right: var(--border);
+      }
+
+      @include tablet {
+        border-bottom: var(--border);
+      }
+    }
+
+    &:has(.testimonial) {
+      padding-inline: fluid-small(400, 0);
+
+      &:nth-child(1) {
+        @include tablet-above {
+          padding-inline: 0 fluid-small(40, 0);
+        }
+
+        @include laptop-above {
+          padding-inline: 0 fluid-big(50, 40);
+        }
+      }
+
+      &:nth-child(2) {
+        @include tablet-above {
+          padding-inline: fluid-small(40, 0) fluid-small(40, 0);
+        }
+
+        @include laptop-above {
+          padding-inline: fluid-big(50, 40) fluid-big(50, 40);
+        }
+      }
+
+      &:nth-child(3) {
+        @include tablet-above {
+          padding-inline: fluid-small(40, 0) 0;
+        }
+
+        @include laptop-above {
+          padding-inline: fluid-big(50, 40) 0;
+        }
+      }
+    }
+  }
+}
