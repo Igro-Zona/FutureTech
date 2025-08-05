@@ -106,7 +106,7 @@
   &__preview {
     display: flex;
     width: 41%;
-    background: url(../../img/hero-review-background.png) 0 0 no-repeat;
+    background: url("../../img/hero-review-background.png") 0 0 no-repeat;
     background-size: contain;
 
     @include tablet {
