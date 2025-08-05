@@ -439,10 +439,10 @@ button[aria-label]::before {
   }
 }
 .icon--yellow-arrow::after {
-  background: url("./img/svg/yellow-arrow.svg") no-repeat;
+  background: url("../img/svg/yellow-arrow.svg") no-repeat;
 }
 .icon--yellow-eye::after {
-  background: url("./img/svg/yellow-eye.svg") no-repeat;
+  background: url("../img/svg/yellow-eye.svg") no-repeat;
 }
 
 .header__promo {
@@ -793,7 +793,7 @@ button[aria-label]::before {
 .hero__preview {
   display: flex;
   width: 41%;
-  background: url("../../img/hero-review-background.png") 0 0 no-repeat;
+  background: url("../img/hero-review-background.png") 0 0 no-repeat;
   background-size: contain;
 }
 @media (width <= 63.99875rem) {
