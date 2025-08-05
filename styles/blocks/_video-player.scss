@@ -1,0 +1,62 @@
+@use "../helpers" as *;
+
+.video-player {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: linear-gradient(180deg, rgba(20, 20, 20, 0) 44.27%, #141414 100%);
+  }
+
+  &__video {
+    object-fit: cover;
+    border-radius: fluid-big(12, 10);
+  }
+
+  &__panel {
+    position: absolute;
+    z-index: 3;
+    bottom: rem(30);
+    left: rem(30);
+    right: rem(30);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition-duration: var(--transition-duration);
+
+    &:not(.is-active) {
+      @include hide;
+    }
+  }
+
+  &__button {
+    @include square(fluid-big(70, 50));
+
+    display: inline-flex;
+    background-color: transparent;
+
+    & svg {
+      height: auto;
+
+      & > * {
+        fill: var(--absolute-white);
+      }
+    }
+
+    @include hover {
+      & svg > * {
+        fill: var(--yellow-55);
+      }
+    }
+  }
+
+  &__duration {
+    @include fluid-text-big(18, 14);
+
+    align-self: flex-end;
+    color: var(--grey-50);
+  }
+}

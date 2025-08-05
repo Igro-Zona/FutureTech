@@ -1,0 +1,152 @@
+@use "../helpers" as *;
+
+.article {
+  max-width: rem(528);
+
+  @include tablet {
+    width: 100%;
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+    border-radius: fluid-big(12, 10);
+    width: 100%;
+    max-width: rem(515);
+    height: fluid-small(222, 185);
+  }
+
+  &__thumb {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    @include fluid-text-big(20, 16);
+
+    margin-top: fluid-big(20, 16);
+    color: var(--absolute-white);
+    font-weight: 600;
+  }
+
+  &__subtitle {
+    margin-top: fluid-big(10, 4);
+
+    @include laptop-above {
+      @include fluid-text-big(20, 16);
+    }
+  }
+
+  &__summary {
+    flex-wrap: wrap;
+    margin-top: fluid(50, 20);
+  }
+
+  &__extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(50);
+    margin-top: fluid-small(16, 10);
+
+    @include laptop-above {
+      margin-top: fluid-big(20, 16);
+    }
+
+    @include mobile-e {
+      flex-direction: column;
+      align-items: start;
+      gap: rem(20);
+    }
+  }
+
+  &__actions {
+    @include fluid-text-big(18, 14);
+
+    &-button {
+      gap: rem(4);
+      padding-inline: fluid-big(16, 14);
+    }
+  }
+
+  &__button {
+    flex: 1;
+    text-align: center;
+
+    @include tablet {
+      max-width: rem(180);
+    }
+  }
+
+  // BIG
+
+  &--big {
+    display: flex;
+    align-items: center;
+    column-gap: fluid-big(80, 40);
+    padding-block: fluid-small(60, 40);
+    max-width: none;
+
+    @include laptop-above {
+      padding-block: fluid-small(80, 60);
+    }
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    .article {
+      &__image {
+        flex-shrink: 0;
+        align-self: flex-start;
+        height: fluid-small(325, 213);
+
+        @include tablet-above {
+          align-self: center;
+        }
+
+        @include laptop-above {
+          height: fluid-big(427, 325);
+        }
+      }
+
+      &__title {
+        @include fluid-text-small(24, 20);
+
+        @include laptop-above {
+          @include fluid-text-big(32, 24);
+        }
+      }
+
+      &__subtitle {
+        @include fluid-text-small(18, 16);
+        margin-top: fluid-small(14, 6);
+
+        @include laptop-above {
+          @include fluid-text-big(20, 18);
+          margin-top: fluid-big(30, 14);
+        }
+      }
+
+      &__extra {
+        margin-top: fluid-small(40, 20);
+
+        @include laptop-above {
+          margin-top: fluid-big(50, 40);
+        }
+      }
+
+      &__actions {
+        @include tablet-above {
+          align-self: flex-start;
+        }
+      }
+
+      &__button {
+        max-width: rem(140);
+      }
+    }
+  }
+}

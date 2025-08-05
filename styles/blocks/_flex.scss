@@ -53,5 +53,27 @@
         }
       }
     }
+
+    &:has(.video-card) {
+      &:nth-child(odd) {
+        @include tablet-above {
+          padding-inline: 0 fluid-small(50, 0);
+        }
+
+        @include laptop-above {
+          padding-inline: 0 fluid-big(80, 50);
+        }
+      }
+
+      &:nth-child(even) {
+        @include tablet-above {
+          padding-inline: fluid-small(50, 0) 0;
+        }
+
+        @include laptop-above {
+          padding-inline: fluid-big(80, 50) 0;
+        }
+      }
+    }
   }
 }

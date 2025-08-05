@@ -13,6 +13,12 @@
   &__item {
     border-bottom: var(--border);
   }
+
+  &:has(.video-card) {
+    @include tablet {
+      flex-direction: column-reverse;
+    }
+  }
 }
 
 .visually-hidden {

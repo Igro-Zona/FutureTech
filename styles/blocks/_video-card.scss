@@ -1,0 +1,29 @@
+@use "../helpers" as *;
+
+.video-card {
+  padding-block: fluid-small(60, 40);
+
+  @include tablet {
+    padding-inline: fluid-small(250, 0);
+  }
+
+  @include laptop-above {
+    padding-block: fluid-big(80, 60);
+  }
+
+  &__player {
+  }
+
+  &__title {
+    margin-top: fluid-big(30, 20);
+    font-weight: 600;
+  }
+
+  &__description {
+    margin-top: fluid-small(6, 4);
+
+    @include laptop-above {
+      margin-top: fluid-big(10, 6);
+    }
+  }
+}

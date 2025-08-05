@@ -1,0 +1,70 @@
+@use "../helpers" as *;
+
+.hero-alt {
+  &__header {
+    border-bottom: var(--border);
+    padding-block: fluid-small(80, 40) fluid-small(100, 40);
+
+    @include laptop-above {
+      padding-block: fluid-big(130, 80) fluid-big(150, 100);
+    }
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: min-content auto;
+    align-items: center;
+    gap: fluid-small(20, 14) fluid-big(80, 60);
+  }
+
+  &__title {
+    grid-column: span 2;
+
+    &--hidden {
+      @include mobile-above {
+        display: none;
+      }
+    }
+  }
+
+  &__title,
+  &__subtitle {
+    @include fluid-text-small(55, 28);
+
+    line-height: 1.3;
+
+    @include laptop-above {
+      @include fluid-text-big(80, 55);
+    }
+  }
+
+  &__description {
+    @include mobile {
+      grid-column: span 2;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(30);
+    padding-block: fluid-small(60, 40);
+
+    @include laptop-above {
+      padding-block: fluid-small(80, 60);
+    }
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    & > * {
+      flex: 1;
+      align-self: center;
+
+      @include tablet-above {
+        min-width: max-content;
+      }
+    }
+  }
+}
